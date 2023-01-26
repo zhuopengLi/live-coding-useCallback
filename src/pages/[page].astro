@@ -1,0 +1,16 @@
+---
+export const getStaticPaths = async () => {
+    return [
+        { params: { page: 'a' } },
+        { params: { page: 'b' } },
+        { params: { page: 'c' } },
+    ]
+}
+
+import Wrapper from '../components/Wrapper'
+import Base from '../layouts/Base.astro'
+---
+
+<Base>
+    <Wrapper client:only="react" />
+</Base>
